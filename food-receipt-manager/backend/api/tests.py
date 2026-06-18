@@ -6,7 +6,7 @@ from rest_framework import status
 from rest_framework.test import APITestCase
 # pyrefly: ignore [missing-import]
 from django.contrib.auth.models import User
-from .models import FoodItem
+from .models import FoodItem, Category
 
 class AuthenticationTests(APITestCase):
     def test_registration(self):
@@ -18,15 +18,18 @@ class AuthenticationTests(APITestCase):
 class FoodItemTests(APITestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='testuser', password='testpassword123')
+        self.category = Category.objects.create(name='Fruits', user=self.user)
         self.client.force_authenticate(user=self.user)
         self.url = reverse('inventory-list')
 
     def test_create_item(self):
         data = {
             'name': 'Apple',
-            'category': 'Fruits',
+            'category': self.category.id,
             'quantity': '10.00',
-            'unit': 'kg'
+            'unit': 'kg',
+            'price': '2.50',
+            'min_stock_level': '5.00'
         }
         response = self.client.post(self.url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
