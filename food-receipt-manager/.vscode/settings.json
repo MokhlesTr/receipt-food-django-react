@@ -1,0 +1,6 @@
+{
+    "python.defaultInterpreterPath": "/Users/mokhlestarmiz/Documents/devnet-project/food-receipt-manager/backend/venv/bin/python",
+    "python.analysis.extraPaths": [
+        "/Users/mokhlestarmiz/Documents/devnet-project/food-receipt-manager/backend"
+    ]
+}
