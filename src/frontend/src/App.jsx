@@ -1,20 +1,25 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { store } from './store';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useEffect, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./store";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import InventoryList from './pages/InventoryList';
-import ItemForm from './pages/ItemForm';
-import CategoriesList from './pages/CategoriesList';
-import CategoryForm from './pages/CategoryForm';
-import TransactionsList from './pages/TransactionsList';
-import TransactionForm from './pages/TransactionForm';
-import Layout from './components/Layout';
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import InventoryList from "./pages/InventoryList";
+import ItemForm from "./pages/ItemForm";
+import CategoriesList from "./pages/CategoriesList";
+import CategoryForm from "./pages/CategoryForm";
+import TransactionsList from "./pages/TransactionsList";
+import TransactionForm from "./pages/TransactionForm";
+import Layout from "./components/Layout";
 
 function App() {
   return (
@@ -37,6 +42,7 @@ function App() {
           </Route>
         </Routes>
       </Router>
+      {/* </Router> */}
       <ToastContainer position="bottom-right" />
     </Provider>
   );
